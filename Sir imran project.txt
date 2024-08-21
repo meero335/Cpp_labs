@@ -1,0 +1,126 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<math.h>
+
+int mins(int a,int b,int c,int d);
+int add(int a,int b,int c, int d);
+int multiply(int a,int b,int c,int d);
+int divid(int a,int b,int c,int d);
+
+
+int main(){
+int a,b,c,d,e;
+printf("Enter 1st Nominator : ");
+scanf("%d",&a);
+
+printf("Enter 1st Denominator : ");
+scanf("%d",&b);
+
+printf("Enter 2nd Nominator : ");
+scanf("%d",&c);
+
+printf("Enter 2nd Denominator : ");
+scanf("%d",&d);
+
+printf("Select one of the operations 1 for + : 2 for - : 3 for * : 4 for / \n");
+scanf("%d",&e);
+
+if (e==1){
+    int w =add(a,b,c,d);
+}
+else if(e==2){
+    int o =mins(a,b,c,d);
+}
+else if(e==3){
+    int p=multiply(a,b,c,d);
+}
+else if(e==4){
+    int t=divid(a,b,c,d);
+}
+else
+    printf("Unknown operation selected!");
+return 0;
+}
+
+int mins(int a,int b,int c,int d){
+int z,x,y,v;
+z=b*d;
+x=b*c;
+y=a*d;
+v=y-x;
+int l=1;
+for (int i=2;i<=v&&i<=z;i++){
+
+    if (v%i==0&&z%i==0){
+        l=i;
+    }
+}
+if (l>1){
+    v/=l;
+    z/=l;
+}
+printf("%d/%d",v,z);
+}
+
+
+
+
+
+int add(int a,int b,int c,int d){
+int z,x,y,v;
+z=b*d;
+x=b*c;
+y=a*d;
+v=x+y;
+int l=1;
+for (int i=2;i<=v&&i<=z;i++){
+
+    if (v%i==0&&z%i==0){
+        l=i;
+    }
+}
+if (l>1){
+    v/=l;
+    z/=l;
+}
+printf("%d/%d",v,z);
+}
+
+int multiply(int a,int b,int c,int d){
+int z,v;
+z=a*c;
+v=b*d;
+int l=1;
+for (int i=2;i<=v&&i<=z;i++){
+
+    if (v%i==0&&z%i==0){
+        l=i;
+    }
+}
+if (l>1){
+    v/=l;
+    z/=l;
+}
+printf("%d/%d",z,v);}
+
+int divid(int a,int b,int c,int d){
+int z,v;
+z=a*d;
+v=c*b;
+int l=1;
+for (int i=2;i<=v&&i<=z;i++){
+
+    if (v%i==0&&z%i==0){
+        l=i;
+    }
+}
+if (l>1){
+    v/=l;
+    z/=l;
+}
+printf("%d/%d",z,v);}
+
+
+
+
+
